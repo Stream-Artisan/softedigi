@@ -5,8 +5,8 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
-  --blue: #007bff;
-  --indigo: #6610f2;
+  --blue: #87bcf5;
+  --indigo: #8e50f1;
   --purple: #6f42c1;
   --pink: #e83e8c;
   --red: #dc3545;
@@ -16,7 +16,7 @@
   --teal: #20c997;
   --cyan: #17a2b8;
   --white: #fff;
-  --gray: #6c757d;
+  --gray: #ffff;
   --gray-dark: #343a40;
   --primary: #007bff;
   --secondary: #6c757d;
@@ -48,8 +48,11 @@ html {
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block; }
-
 body {
+  background-image: url('../images/hero-bg2.jpg') !important;
+  background-size: cover;
+  background-attachment: fixed!important; /* Keeps the background image fixed on the viewport */
+  background-color: #fff;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
@@ -57,7 +60,26 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff; }
+  position: relative; /* Required for the overlay pseudo-element */
+}
+
+/* Black overlay using ::before pseudo-element */
+body::before {
+  content: '';
+  position: fixed; /* Fixed to stay in place with the background */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+  z-index: 1; /* Places overlay above the background but below content */
+}
+
+/* Ensure content is above the overlay */
+body > * {
+  position: relative;
+  z-index: 2;
+}
 
 [tabindex="-1"]:focus {
   outline: 0 !important; }
@@ -3427,6 +3449,7 @@ input[type="button"].btn-block {
   display: block; }
 
 .navbar {
+  color: white!important;
   background: transparent!important;
   position: relative;
   display: -webkit-box;
@@ -3443,6 +3466,8 @@ input[type="button"].btn-block {
   padding: 0.5rem 1rem; }
   .navbar > .container,
   .navbar > .container-fluid {
+    background-color: transparent!important;
+    color: white!important;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -3456,6 +3481,7 @@ input[type="button"].btn-block {
     justify-content: space-between; }
 
 .navbar-brand {
+  color: white!important;
   display: inline-block;
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
@@ -3479,6 +3505,7 @@ input[type="button"].btn-block {
   margin-bottom: 0;
   list-style: none; }
   .navbar-nav .nav-link {
+    color: white!important;
     padding-right: 0;
     padding-left: 0; }
   .navbar-nav .dropdown-menu {
@@ -8168,6 +8195,7 @@ h1, h2, h3, h4, h5,
   color: #323edd !important; }
 
 .wrap {
+  color: white!important;
   background: #090f35;
   padding: 10px 0;
   position: absolute;
@@ -8408,7 +8436,7 @@ h1, h2, h3, h4, h5,
   position: inherit;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center; }
+  background-position: center; }
   @media (max-width: 991.98px) {
     .hero-wrap {
       background-position: top center !important; } }
@@ -8814,6 +8842,7 @@ h1, h2, h3, h4, h5,
     height: 250px; }
 
 .ftco-faqs .myaccordion {
+  background-color: transparent!important;
   margin: 0 auto;
   overflow: hidden; }
 
