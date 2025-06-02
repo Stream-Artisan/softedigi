@@ -6,39 +6,244 @@
  */
  
 :root {
-  --blue: #87bcf5;
-  --indigo: #8e50f1;
-  --purple: #6f42c1;
-  --pink: #e83e8c;
-  --red: #dc3545;
-  --orange: #fd7e14;
-  --yellow: #ffc107;
-  --green: #28a745;
-  --teal: #20c997;
-  --cyan: #17a2b8;
-  --white: #fff;
-  --gray: #ffff;
-  --gray-dark: #343a40;
-  --primary: #007bff;
-  --secondary: #6c757d;
-  --success: #28a745;
-  --info: #17a2b8;
-  --warning: #ffc107;
-  --danger: #dc3545;
-  --light: #f8f9fa;
-  --dark: #343a40;
-  --breakpoint-xs: 0;
-  --breakpoint-sm: 576px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+  --blue: #0052cc!important; /* Deep professional blue */
+  --indigo: #5c4b99; /* Muted indigo */
+  --purple: #6b5b95; /* Muted purple */
+  --pink: #d63384; /* Subdued pink */
+  --red: #d32f2f; /* Deeper red */
+  --orange: #f57c00; /* Muted orange */
+  --yellow: #ffab00; /* Softer yellow */
+  --green: #2e7d32; /* Professional green */
+  --teal: #26a69a; /* Muted teal */
+  --cyan: #0288d1; /* Professional cyan */
+  --white: #ffffff; /* Kept as white */
+  --gray: #bdbdbd; /* Medium gray for contrast */
+  --gray-dark: #424242; /* Darker gray */
+  --primary: #0052cc; /* Professional blue */
+--secondary: #616161; /* Muted gray */
+--success: #2e7d32; /* Success green */
+--info: #0288d1; /* Info cyan */
+--warning: #ffab00; /* Warning yellow */
+--danger: #d32f2f; /* Danger red */
+--light: #f5f5f5; /* Light gray */
+--dark: #212121; /* Deep dark */
+
+/* Responsive breakpoints */
+--breakpoint-xs: 0;
+--breakpoint-sm: 576px;
+--breakpoint-md: 768px;
+--breakpoint-lg: 992px;
+--breakpoint-xl: 1200px;
+
+/* Font families */
+--font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+/* =============================
+   Custom Bootstrap Variables
+   Refined for Professional Use
+   ============================= */
+
+/* =============================
+   Custom Styles for Softedigi
+   ============================= */
+
+/* Section Headings */
+.heading-section h2,
+.heading-section .mb-4 {
+  color: var(--primary);
+  font-family: 'Montserrat', var(--font-family-sans-serif);
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+.heading-section span {
+  color: var(--info);
 }
 
+/* Buttons */
+.btn-primary {
+  background: var(--primary);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 0.75rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,82,204,0.10);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background: var(--info);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(2,136,209,0.15);
+}
+
+/* Service Cards */
+.services-2, .media.block-6.services, .project {
+  background: rgba(255,255,255,0.75); /* More transparent */
+  border-radius: 1rem;
+  box-shadow: 0 2px 16px rgba(33,33,33,0.07);
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+  transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
+}
+
+/* Exclusive Services Cards Improvements */
+.media.block-6.services {
+  background: rgba(255,255,255,0.75); /* More transparent */
+  border-radius: 1rem;
+  box-shadow: 0 2px 16px rgba(33,33,33,0.07);
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+  border: 1.5px solid #e0e0e0;
+  color: #222 !important;
+  transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
+  min-height: 370px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.media.block-6.services:hover,
+.services-2:hover,
+.project:hover {
+  box-shadow: 0 8px 32px rgba(0,82,204,0.15);
+  transform: translateY(-4px) scale(1.03);
+  border-color: var(--primary);
+  background: rgba(255,255,255,0.96); /* Even lighter on hover */
+}
+
+.media.block-6.services .icon img {
+  border-radius: 0.5rem;
+  max-width: 70px;
+  margin-bottom: 1rem;
+  background: #f5f5f5;
+  padding: 0.5rem;
+}
+
+.media.block-6.services .heading {
+  color: #111 !important;
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.media.block-6.services .media-body {
+  color: #222 !important;
+}
+
+.media.block-6.services p {
+  color: #222 !important;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.media.block-6.services .line {
+  width: 40px;
+  height: 3px;
+  background: var(--primary);
+  margin: 0 auto 1rem auto;
+  border-radius: 2px;
+}
+
+@media (max-width: 767.98px) {
+  .media.block-6.services {
+    padding: 1.25rem 0.75rem;
+    min-height: unset;
+  }
+}
+
+.services-2:hover, .media.block-6.services:hover, .project:hover {
+  box-shadow: 0 8px 32px rgba(0,82,204,0.15);
+  transform: translateY(-4px) scale(1.02);
+  background: rgba(255,255,255,0.92); /* Slightly less transparent on hover */
+}
+.services-2 .icon img,
+.media.block-6.services .icon img,
+.project .img img {
+  border-radius: 0.5rem;
+  max-width: 80px;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.ftco-footer {
+  background: var(--dark);
+  color: #fff;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+.ftco-footer a {
+  color: var(--info);
+  transition: color 0.2s;
+}
+.ftco-footer a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+.ftco-footer .ftco-heading-2 {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Navbar */
+.navbar {
+  background: var(--dark) !important;
+  border-bottom: 1px solid var(--gray-dark);
+}
+.navbar .nav-link, .navbar .navbar-brand {
+  color: #fff !important;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+.navbar .nav-link.active, .navbar .nav-link:hover {
+  color: var(--primary) !important;
+}
+
+/* Testimonial Section */
+.testimony-wrap {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 16px rgba(33,33,33,0.07);
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+}
+.testimony-wrap .overlay {
+  border-radius: 1rem;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 767.98px) {
+  .heading-section h2, .heading-section .mb-4 {
+    font-size: 1.5rem;
+  }
+  .services-2, .media.block-6.services, .project {
+    padding: 1.25rem 0.75rem;
+  }
+}
+
+/* Accessibility: Focus States */
+.btn:focus, .nav-link:focus, a:focus {
+  outline: 2px solid var(--info);
+  outline-offset: 2px;
+}
+
+/* Utility: Hide visually but keep accessible */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
 *,
 *::before,
 *::after {
@@ -92,6 +297,7 @@ body::before {
   height: 100%;
   background-color: rgba(85, 84, 84, 0.5); /* Black overlay with 50% opacity */
   z-index: 1; /* Places overlay above the background but below content */
+  pointer-events: none; /* <-- Add this line */
 }
 .mb-0{
   color: white;
@@ -608,21 +814,85 @@ pre code {
   margin-left: auto;
 }
 @media (min-width: 576px) {
+  body {
+  background-image: url("https://plus.unsplash.com/premium_photo-1682141013747-5aed8665c154?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNvZnR3YXJlJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D") !important;
+  background-size: cover!important;
+  background-attachment: fixed !important; /* Keeps the background image fixed on the viewport */
+  background-color:transparent;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  position: relative; /* Required for the overlay pseudo-element */
+}
   .container {
     max-width: 540px;
   }
 }
 @media (min-width: 768px) {
+  body {
+  background-image: url("https://plus.unsplash.com/premium_photo-1682141013747-5aed8665c154?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNvZnR3YXJlJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D") !important;
+  background-size: cover!important;
+  background-attachment: fixed !important; /* Keeps the background image fixed on the viewport */
+  background-color: #fff;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  position: relative; /* Required for the overlay pseudo-element */
+}
   .container {
     max-width: 720px;
   }
 }
 @media (min-width: 992px) {
+  body {
+  background-image: url("https://plus.unsplash.com/premium_photo-1682141013747-5aed8665c154?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNvZnR3YXJlJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D") !important;
+  background-size: cover!important;
+  background-attachment: fixed !important; /* Keeps the background image fixed on the viewport */
+  background-color: #fff;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  position: relative; /* Required for the overlay pseudo-element */
+}
   .container {
     max-width: 960px;
   }
 }
 @media (min-width: 1200px) {
+  body {
+  background-image: url("https://plus.unsplash.com/premium_photo-1682141013747-5aed8665c154?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNvZnR3YXJlJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D") !important;
+  background-size: cover!important;
+  background-attachment: fixed !important; /* Keeps the background image fixed on the viewport */
+  background-color: #fff;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  position: relative; /* Required for the overlay pseudo-element */
+}
   .container {
     max-width: 1140px;
   }
@@ -11016,7 +11286,7 @@ h5,
 
 .hero-wrap {
   width: 100%;
-  height: 100%;
+  height: auto;
   position: inherit;
   background-size: cover;
   background-repeat: no-repeat;
@@ -11205,18 +11475,18 @@ h5,
   font-size: 16px;
 }
 .ftco-intro .services-1.color-1 {
-  background: #2430d7;
+  background: transparent;
 }
 .ftco-intro .services-1.color-2 {
-  background: #222ece;
+  background: transparent;
 }
 .ftco-intro .services-1:hover {
-  background: #202bc1;
+  background: transparent;
 }
 .ftco-intro .services-1:hover:after,
 .ftco-intro .services-1:hover:before {
   height: 30px;
-  background: #ffa41b;
+  background: transparent;
 }
 .ftco-intro .services-1:hover .line:before,
 .ftco-intro .services-1:hover .line:after {
@@ -11393,7 +11663,7 @@ h5,
 }
 
 .services {
-  background: #323edd;
+  background: transparent;
   padding: 20px;
   position: relative;
   -moz-transition: all 0.3s ease;

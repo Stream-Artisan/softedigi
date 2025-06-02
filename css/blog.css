@@ -1,0 +1,7 @@
+#hero {
+  background-image: url('https://t3.ftcdn.net/jpg/01/08/20/56/360_F_108205680_W5j20gVAkNzd1fZ1dbPxy2tJc0sswjJI.webp');
+  overflow: hidden;
+  height: 15em;
+  background-size: cover; /* Ensures the image scales properly */
+  background-position: 50% 70%; /* Moves the image upward (50% horizontal, 30% vertical) */
+}
