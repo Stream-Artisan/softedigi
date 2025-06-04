@@ -73,43 +73,105 @@
 		]
 	}
 	</script>
+	<style>
+      .custom-card {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        background-color: transparent; /* Outer card itself is transparent */
+        height: 100%; /* Ensure it respects h-100 from parent */
+      }
+
+      .custom-card .card-image-top {
+        width: 100%;
+        line-height: 0; /* Remove extra space if image is inline-block */
+      }
+
+      .custom-card .card-image-top img { /* For .services-2 original icons / now photos */
+        width: 100%;
+        height: 150px; /* Example fixed height, adjust as needed */
+        object-fit: cover; /* 'cover' for photos */
+        display: block;
+        /* padding: 10px; */ /* Removed for photos */
+        /* background-color: rgba(0,0,0,0.05); */ /* Removed for photos */
+      }
+
+      .custom-card .card-image-top .service-icon { /* For .service-card FontAwesome icons */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 150px; /* Match image height */
+        font-size: 4rem; /* Adjust icon size */
+        background-color: rgba(230, 230, 230, 0.1); /* Light semi-transparent bg for icon area */
+        color: #333; /* Adjust icon color for light bg */
+      }
+      .ftco-section:not(.services-section) .custom-card .card-image-top .service-icon {
+         color: #fff; /* Icon color for dark bg */
+         background-color: rgba(0,0,0,0.1);
+      }
+
+
+      .custom-card .card-content-area {
+        padding: 20px;
+        text-align: center;
+        flex-grow: 1; /* Allow content area to grow */
+      }
+
+      /* Apply specific semi-transparent backgrounds to the content area */
+      /* For original .services-2 section (section without .services-section class) */
+      .ftco-section:not(.services-section) .custom-card .card-content-area {
+        background-color: rgba(50, 50, 50, 0.5) !important;
+      }
+      .ftco-section:not(.services-section) .custom-card .card-content-area h3,
+      .ftco-section:not(.services-section) .custom-card .card-content-area p {
+          color: #fff !important;
+      }
+
+      /* For .services-section (section with .bg-light) */
+      .ftco-section.services-section .custom-card .card-content-area {
+        background-color: rgba(255, 255, 255, 0.5) !important;
+      }
+      .ftco-section.services-section .custom-card .card-content-area h3,
+      .ftco-section.services-section .custom-card .card-content-area p,
+      .ftco-section.services-section .custom-card .card-content-area a {
+          color: #333 !important; /* Ensure text is dark for light background */
+      }
+
+      .ftco-section.services-section .custom-card .card-image-top img {
+        width: 100%;
+        height: 150px; /* Keep height consistent */
+        object-fit: cover; /* 'cover' for photos */
+        display: block;
+        /* No padding or specific background-color needed for cover images */
+      }
+	</style>
 </head>
 <body>
 	<div class="wrap">
 		<div class="container">
-			<div class="row justify-content-between align-items-center py-2">
-				<div class="col-12 col-md-8">
-					<div class="d-flex align-items-center flex-wrap">
-						<p class="mb-0 phone mr-4">
-							<a href="tel:+923000265371" class="d-flex align-items-center">
-								<i class="fas fa-phone-alt mr-2"></i>
-								+92 300 0265371
-							</a>
-						</p>
-						<p class="mb-0 phone">
-							<a href="mailto:info@softedigi.com" class="d-flex align-items-center">
-								<i class="fas fa-envelope mr-2"></i>
-								info@softedigi.com
-							</a>
-						</p>
-					</div>
+			<div class="row justify-content-between align-items-center py-1">
+				<div class="col-12 col-lg-auto text-center text-lg-left mb-2 mb-lg-0">
+					<p class="mb-0 phone d-inline-flex align-items-center flex-wrap justify-content-center justify-content-lg-start">
+						<a href="tel:+923000265371" class="d-flex align-items-center mr-3" style="color: white; font-size: 1.05em; text-decoration: none;">
+							<i class="fas fa-phone-alt mr-2"></i>+92 300 0265371
+						</a>
+						<span class="d-none d-md-inline mx-2" style="color: white; opacity: 0.7;">|</span>
+						<a href="mailto:info@softedigi.com" class="d-flex align-items-center mt-1 mt-md-0" style="color: white; font-size: 1.05em; text-decoration: none;">
+							<i class="fas fa-envelope mr-2"></i>info@softedigi.com
+						</a>
+					</p>
 				</div>
-				<div class="col-12 col-md-4">
+				<div class="col-12 col-lg-auto text-center text-lg-right">
 					<div class="social-media">
-						<div class="d-flex justify-content-md-end">
-							<a href="#" class="social-icon" aria-label="Facebook">
-								<i class="fab fa-facebook-f"></i>
-							</a>
-							<a href="#" class="social-icon" aria-label="Twitter">
-								<i class="fab fa-twitter"></i>
-							</a>
-							<a href="#" class="social-icon" aria-label="Instagram">
-								<i class="fab fa-instagram"></i>
-							</a>
-							<a href="#" class="social-icon" aria-label="LinkedIn">
-								<i class="fab fa-linkedin-in"></i>
-							</a>
-						</div>
+						<p class="mb-0 d-inline-flex align-items-center justify-content-center justify-content-lg-end">
+							<a href="#" class="d-flex align-items-center justify-content-center" style="color: white; margin-left: 12px; font-size: 1.1em; text-decoration: none;"><span class="fab fa-facebook-f"></span></a>
+							<a href="#" class="d-flex align-items-center justify-content-center" style="color: white; margin-left: 12px; font-size: 1.1em; text-decoration: none;"><span class="fab fa-twitter"></span></a>
+							<a href="#" class="d-flex align-items-center justify-content-center" style="color: white; margin-left: 12px; font-size: 1.1em; text-decoration: none;"><span class="fab fa-instagram"></span></a>
+							<a href="#" class="d-flex align-items-center justify-content-center" style="color: white; margin-left: 12px; font-size: 1.1em; text-decoration: none;"><span class="fab fa-dribbble"></span></a>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -119,8 +181,8 @@
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
 			<a class="navbar-brand d-flex align-items-center" href="index.html">
-				<img src="images/llogo.png" alt="Softedigi Logo" width="50" height="50">
-				<span class="ml-3">Softedigi</span>
+				<img src="images/llogo.png" alt="Softedigi Logo" width="50" height="80">
+				<!-- <span class="ml-3">Softedigi</span> -->
 			</a>
 			
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" 
@@ -137,7 +199,8 @@
 					<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 					<li class="nav-item cta">
 						<a href="contact.html" class="nav-link">
-							<i class="fas fa-paper-plane mr-2"></i>Get Started
+							<!-- <i class="fas fa-paper-plane mr-2"></i>Get Started -->
+							 Get Started
 						</a>
 					</li>
 				</ul>
@@ -160,10 +223,10 @@
 						We help businesses thrive in the digital age with cutting-edge technology solutions and expert guidance.
 					</p>
 					<div class="d-flex">
-						<a href="contact.html" class="btn btn-primary px-4 py-3 mr-3">
+						<!-- <a href="contact.html" class="btn btn-primary px-4 py-3 mr-3">
 							Get Started
 							<i class="fas fa-arrow-right ml-2"></i>
-						</a>
+						</a> -->
 						<a href="about.html" class="btn btn-outline-light px-4 py-3">
 							Learn More
 						</a>
@@ -184,27 +247,34 @@
 			<div class="row">
 				<!-- Service Card 1 -->
 				<div class="col-md-4 mb-4">
-					<div class="services-2 text-center shadow-sm h-100">
-						<div class="icon mb-3">
-							<img src="https://cdn-icons-png.flaticon.com/128/8004/8004415.png" alt="Web Development Icon" width="90">
+					<div class="custom-card">
+						<div class="card-image-top">
+							<img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Innovative Web Development">
 						</div>
-						<div class="text">
+						<div class="card-content-area">
 							<h3>Web Development</h3>
 							<p>Crafting powerful, scalable, and responsive websites tailored to your business needs. Our expert developers bring your vision to life.</p>
 						</div>
 					</div>
 				</div>
-				<!-- Center illustration -->
-				<div class="col-md-4 mb-4 d-flex align-items-center">
-					<img src="images/services.svg" class="img-fluid mx-auto d-block" alt="Services Illustration" style="max-width:260px;">
-				</div>
-				<!-- Service Card 2 -->
 				<div class="col-md-4 mb-4">
-					<div class="services-2 text-center shadow-sm h-100">
-						<div class="icon mb-3">
-							<img src="https://cdn-icons-png.flaticon.com/128/922/922699.png" alt="Web Designing Icon" width="90">
+					<div class="custom-card">
+						<div class="card-image-top">
+							<img src="https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Creative Mobile App Development">
 						</div>
-						<div class="text">
+						<div class="card-content-area">
+							<h3>Mobile App Development</h3>
+							<p>Developing cutting-edge mobile apps that deliver exceptional user experiences across all devices.</p>
+						</div>
+					</div>
+				</div>
+				<!-- Service Card 2 (was Web Designing) -->
+				<div class="col-md-4 mb-4">
+					<div class="custom-card">
+						<div class="card-image-top">
+							<img src="https://images.pexels.com/photos/5077063/pexels-photo-5077063.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Modern Web Designing">
+						</div>
+						<div class="card-content-area">
 							<h3>Web Designing</h3>
 							<p>Designing user-centric, visually stunning websites that captivate your audience. We blend creativity with functionality for standout online presence.</p>
 						</div>
@@ -212,11 +282,11 @@
 				</div>
 				<!-- Service Card 3 -->
 				<div class="col-md-4 mb-4">
-					<div class="services-2 text-center shadow-sm h-100">
-						<div class="icon mb-3">
-							<img src="https://cdn-icons-png.flaticon.com/128/3141/3141181.png" alt="Digital Marketing Icon" width="90">
+					<div class="custom-card">
+						<div class="card-image-top">
+							<img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Strategic Digital Marketing">
 						</div>
-						<div class="text">
+						<div class="card-content-area">
 							<h3>Digital Marketing</h3>
 							<p>Boost your brand with targeted SEO, social media strategies, and data-driven campaigns that drive traffic and conversions.</p>
 						</div>
@@ -224,11 +294,11 @@
 				</div>
 				<!-- Service Card 4 -->
 				<div class="col-md-4 mb-4">
-					<div class="services-2 text-center shadow-sm h-100">
-						<div class="icon mb-3">
-							<img src="https://cdn-icons-png.flaticon.com/128/8039/8039094.png" alt="Graphic Designing Icon" width="90">
+					<div class="custom-card">
+						<div class="card-image-top">
+							<img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Impactful Graphic Designing">
 						</div>
-						<div class="text">
+						<div class="card-content-area">
 							<h3>Graphic Designing</h3>
 							<p>Create stunning visuals with our expert logo design, branding, and print media services tailored to your business needs.</p>
 						</div>
@@ -236,11 +306,11 @@
 				</div>
 				<!-- Service Card 5 -->
 				<div class="col-md-4 mb-4">
-					<div class="services-2 text-center shadow-sm h-100">
-						<div class="icon mb-3">
-							<img src="https://cdn-icons-png.flaticon.com/128/13165/13165173.png" alt="E-Book Icon" width="90">
+					<div class="custom-card">
+						<div class="card-image-top">
+							<img src="https://images.pexels.com/photos/6476254/pexels-photo-6476254.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Engaging E-Book Creation">
 						</div>
-						<div class="text">
+						<div class="card-content-area">
 							<h3>E-Book</h3>
 							<p>Transform your ideas into professional e-books with our writing, formatting, and publishing services for seamless distribution.</p>
 						</div>
@@ -317,11 +387,11 @@
 			<div class="row">
 				<!-- Service Card 1 -->
 				<div class="col-md-6 col-lg-4 mb-4">
-					<div class="service-card h-100">
-						<div class="card-content">
-							<div class="icon-wrapper mb-4">
-								<i class="fas fa-code service-icon"></i>
-							</div>
+					<div class="custom-card">
+						<div class="card-image-top">
+							<img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Web Development">
+						</div>
+						<div class="card-content-area">
 							<h3 class="mb-3">Web Development</h3>
 							<p>Custom web solutions built with cutting-edge technologies. We create scalable, secure, and high-performance websites tailored to your needs.</p>
 							<a href="services.html#web-development" class="btn-link">
@@ -333,11 +403,11 @@
 
 				<!-- Service Card 2 -->
 				<div class="col-md-6 col-lg-4 mb-4">
-					<div class="service-card h-100">
-						<div class="card-content">
-							<div class="icon-wrapper mb-4">
-								<i class="fas fa-palette service-icon"></i>
-							</div>
+					<div class="custom-card">
+						<div class="card-image-top">
+							<img src="https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Web Design">
+						</div>
+						<div class="card-content-area">
 							<h3 class="mb-3">Web Design</h3>
 							<p>Beautiful, responsive designs that engage your audience. We focus on user experience and modern aesthetics to make your brand stand out.</p>
 							<a href="services.html#web-design" class="btn-link">
@@ -349,11 +419,11 @@
 
 				<!-- Service Card 3 -->
 				<div class="col-md-6 col-lg-4 mb-4">
-					<div class="service-card h-100">
-						<div class="card-content">
-							<div class="icon-wrapper mb-4">
-								<i class="fas fa-chart-line service-icon"></i>
-							</div>
+					<div class="custom-card">
+						<div class="card-image-top">
+							<img src="https://images.pexels.com/photos/6476783/pexels-photo-6476783.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Digital Marketing">
+						</div>
+						<div class="card-content-area">
 							<h3 class="mb-3">Digital Marketing</h3>
 							<p>Strategic marketing solutions to boost your online presence. SEO, social media, and content strategies that drive results.</p>
 							<a href="services.html#digital-marketing" class="btn-link">
@@ -365,11 +435,11 @@
 
 				<!-- Service Card 4 -->
 				<div class="col-md-6 col-lg-4 mb-4">
-					<div class="service-card h-100">
-						<div class="card-content">
-							<div class="icon-wrapper mb-4">
-								<i class="fas fa-pencil-ruler service-icon"></i>
-							</div>
+					<div class="custom-card">
+						<div class="card-image-top">
+							<img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Graphic Design">
+						</div>
+						<div class="card-content-area">
 							<h3 class="mb-3">Graphic Design</h3>
 							<p>Eye-catching visuals that tell your story. From logos to marketing materials, we create designs that make an impact.</p>
 							<a href="services.html#graphic-design" class="btn-link">
@@ -381,11 +451,11 @@
 
 				<!-- Service Card 5 -->
 				<div class="col-md-6 col-lg-4 mb-4">
-					<div class="service-card h-100">
-						<div class="card-content">
-							<div class="icon-wrapper mb-4">
-								<i class="fas fa-mobile-alt service-icon"></i>
-							</div>
+					<div class="custom-card">
+						<div class="card-image-top">
+							<img src="https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Mobile Development">
+						</div>
+						<div class="card-content-area">
 							<h3 class="mb-3">Mobile Development</h3>
 							<p>Native and cross-platform mobile apps that deliver exceptional user experiences across all devices.</p>
 							<a href="services.html#mobile-development" class="btn-link">
@@ -397,11 +467,11 @@
 
 				<!-- Service Card 6 -->
 				<div class="col-md-6 col-lg-4 mb-4">
-					<div class="service-card h-100">
-						<div class="card-content">
-							<div class="icon-wrapper mb-4">
-								<i class="fas fa-book service-icon"></i>
-							</div>
+					<div class="custom-card">
+						<div class="card-image-top">
+							<img src="https://images.pexels.com/photos/415071/pexels-photo-415071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="E-Book Creation">
+						</div>
+						<div class="card-content-area">
 							<h3 class="mb-3">E-Book Creation</h3>
 							<p>Professional e-book design and development services. We help you create engaging digital publications that reach your audience.</p>
 							<a href="services.html#ebook-creation" class="btn-link">
@@ -506,7 +576,7 @@
 			<div class="row d-flex">
 				<div class="col-md-4 d-flex ftco-animate">
 					<div class="blog-entry justify-content-end">
-						<a href="welcome-blog.html" class="block-20" style="background-image: url('https://plus.unsplash.com/premium_photo-1683309565422-77818a287060?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YmxvZ3xlbnwwfHwwfHx8MA%3D%3D');" width="100%">
+						<a href="welcome-blog.html" class="block-20" style="background-image: url('https://plus.unsplash.com/premium_photo-1683309565422-77718a287060?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YmxvZ3xlbnwwfHwwfHx8MA%3D%3D');">
 						</a>
 						<div class="text mt-3 float-right d-block">
 							<div class="d-flex align-items-center pt-2 mb-4 topp">
@@ -520,10 +590,49 @@
 							</div>
 							<h3 class="heading"><a href="welcome-blog.html">Welcome to Softedigi — Where Ideas Turn Into Digital Reality</a></h3>
 						</div>
+						
+					</div>
+					
+				</div>
+
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="blog-post-2.html" class="block-20" style="background-image: url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmxvZ3xlbnwwfHwwfHx8MA%3D%3D');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+							<div class="d-flex align-items-center pt-2 mb-4 topp">
+								<div class="one">
+									<span class="day">15</span>
+								</div>
+								<div class="two pl-1">
+									<span class="yr">2025</span>
+									<span class="mos">July</span>
+								</div>
+							</div>
+							<h3 class="heading"><a href="blog-post-2.html">The Future of Web Development: Trends to Watch</a></h3>
+						</div>
 					</div>
 				</div>
-				
+
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="blog-post-3.html" class="block-20" style="background-image: url('https://images.unsplash.com/photo-1542435503-956c469947f6?w=500&auto=format&fit=crop&q=60&ixlibrb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmxvZ3xlbnwwfHwwfHx8MA%3D%3D');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+							<div class="d-flex align-items-center pt-2 mb-4 topp">
+								<div class="one">
+									<span class="day">28</span>
+								</div>
+								<div class="two pl-1">
+									<span class="yr">2025</span>
+									<span class="mos">August</span>
+								</div>
+							</div>
+							<h3 class="heading"><a href="blog-post-3.html">Maximizing ROI with Digital Marketing Strategies</a></h3>
+						</div>
+					</div>
 				</div>
+
 			</div>
 		</div>
 	</section>
@@ -588,8 +697,8 @@
 		</div>
 	</section>
 
-	<a href="https://wa.me/+92 300 0265371" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
-		<i class="fa fa-whatsapp"></i>
+	<a href="https://wa.me/+923000265371" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
+		<img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-social-media/whatsapp-white-icon.svg" alt="WhatsApp Icon">
 	</a>
 
 	<footer class="ftco-footer ftco-footer-2 ftco-section" style="background:#212121;">
@@ -598,14 +707,14 @@
 				<div class="col-md">
 					<div class="ftco-footer-widget mb-4">
 						<a class="navbar-brand" href="index.html" aria-label="Softedigi Home">
-							<img src="images/llogo.png" alt="Softedigi Logo" width="50">
+							<img src="images/llogo.png" alt="Softedigi Logo" width="50" style="margin-top: -10px;">
 						</a>
 						<p class="text-light">Far from the noise of the crowded tech world, we craft innovative IT solutions designed to move your business forward. Fueled by passion, guided by clear strategy, and committed to building lasting impact from day one.</p>
-						<ul class="ftco-footer-social list-unstyled mt-2">
+						<!-- <ul class="ftco-footer-social list-unstyled mt-2">
 							<li class="ftco-animate"><a href="#" aria-label="Twitter"><span class="fa fa-twitter"></span></a></li>
 							<li class="ftco-animate"><a href="#" aria-label="Facebook"><span class="fa fa-facebook"></span></a></li>
 							<li class="ftco-animate"><a href="#" aria-label="Instagram"><span class="fa fa-instagram"></span></a></li>
-						</ul>
+						</ul> -->
 					</div>
 				</div>
 				<div class="col-md">
@@ -620,7 +729,7 @@
 					</div>
 				</div>
 				<div class="col-md">
-					<div class="ftco-footer-widget mb-4">
+					<div class="ftco-footer-widget mb-4 ml-md-5">
 						<h2 class="ftco-heading-2 text-white">Legal</h2>
 						<ul class="list-unstyled">
 							<li><a href="privacy.html" class="py-2 d-block">Privacy &amp; Policy</a></li>
