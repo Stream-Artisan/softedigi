@@ -1,7 +1,158 @@
-#hero {
-  background-image: url('https://t4.ftcdn.net/jpg/01/55/50/13/360_F_155501367_ml1PACDuR38eZKcBTA7jfMVLlmX79zYl.webp');
-  overflow: hidden;
-  height: 15em;
-  background-size: cover; /* Ensures the image scales properly */
-  background-position: 50% 70%; /* Moves the image upward (50% horizontal, 30% vertical) */
+/* About Page Styles */
+.hero-wrap {
+    position: relative;
+    background-attachment: fixed;
+}
+
+.hero-wrap .overlay {
+    background: linear-gradient(45deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%);
+}
+
+.hero-wrap h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-wrap .lead {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Mission & Vision Section */
+.mission-vision {
+    padding: 4rem 0;
+}
+
+.mission-vision h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.mission-vision h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+.mission-vision p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.8);
+}
+
+/* Team Carousel */
+.carousel {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+}
+
+.carousel-indicators {
+    bottom: 20px;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+    opacity: 0.7;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+/* Counter Section */
+.ftco-counter {
+    position: relative;
+    overflow: hidden;
+}
+
+.ftco-counter .img {
+    border-radius: 15px 0 0 15px;
+    overflow: hidden;
+}
+
+.counter-wrap {
+    text-align: center;
+}
+
+.counter-wrap .number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.counter-wrap span {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.8);
+}
+
+/* Testimonial Section */
+.testimony-section {
+    position: relative;
+    padding: 6rem 0;
+}
+
+.testimony-section .overlay-1 {
+    background: linear-gradient(45deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 100%);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero-wrap h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-wrap .lead {
+        font-size: 1.1rem;
+    }
+    
+    .carousel-item img {
+        height: 300px;
+    }
+    
+    .counter-wrap .number {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-wrap h1 {
+        font-size: 2rem;
+    }
+    
+    .mission-vision h3 {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-item img {
+        height: 250px;
+    }
 }

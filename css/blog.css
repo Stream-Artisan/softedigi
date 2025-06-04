@@ -1,7 +1,217 @@
-#hero {
-  background-image: url('https://t3.ftcdn.net/jpg/01/08/20/56/360_F_108205680_W5j20gVAkNzd1fZ1dbPxy2tJc0sswjJI.webp');
-  overflow: hidden;
-  height: 15em;
-  background-size: cover; /* Ensures the image scales properly */
-  background-position: 50% 70%; /* Moves the image upward (50% horizontal, 30% vertical) */
+/* Blog Page Styles */
+.hero-wrap {
+    position: relative;
+    background-attachment: fixed;
+}
+
+.hero-wrap .overlay {
+    background: linear-gradient(45deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%);
+}
+
+.hero-wrap h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-wrap .lead {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Blog Section */
+.ftco-section {
+    padding: 5rem 0;
+}
+
+.heading-section h2 {
+    color: var(--dark);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.heading-section h2:after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+/* Blog Cards */
+.blog-entry {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.blog-entry:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.blog-entry .block-20 {
+    height: 250px;
+    width: 100%;
+    display: block;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-entry .block-20:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.blog-entry:hover .block-20:after {
+    opacity: 1;
+}
+
+.blog-entry .text {
+    padding: 1.5rem;
+}
+
+.blog-entry .topp {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.blog-entry .one {
+    display: inline-block;
+}
+
+.blog-entry .day {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1;
+}
+
+.blog-entry .two {
+    display: inline-block;
+    padding-left: 0.5rem;
+}
+
+.blog-entry .yr,
+.blog-entry .mos {
+    display: block;
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.blog-entry .heading {
+    font-size: 1.25rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.blog-entry .heading a {
+    color: var(--dark);
+    transition: all 0.3s ease;
+}
+
+.blog-entry .heading a:hover {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+/* Blog Post Content */
+.blog-content {
+    padding: 2rem 0;
+}
+
+.blog-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--dark);
+}
+
+.blog-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+}
+
+.blog-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+
+.blog-content blockquote {
+    background: rgba(255, 171, 0, 0.1);
+    border-left: 4px solid var(--primary);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 0 10px 10px 0;
+}
+
+.blog-content blockquote p {
+    font-style: italic;
+    color: var(--dark);
+    margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero-wrap h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-wrap .lead {
+        font-size: 1.1rem;
+    }
+    
+    .heading-section h2 {
+        font-size: 2rem;
+    }
+    
+    .blog-entry .block-20 {
+        height: 200px;
+    }
+    
+    .blog-entry .heading {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-wrap h1 {
+        font-size: 2rem;
+    }
+    
+    .blog-entry .block-20 {
+        height: 180px;
+    }
+    
+    .blog-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .blog-content p {
+        font-size: 1rem;
+    }
 }

@@ -1,7 +1,207 @@
-#hero {
-  background-image: url('https://t3.ftcdn.net/jpg/10/60/55/78/360_F_1060557899_aTBtzmRJGfzs6t0Wq46JbOmusOKfE6Ft.webp');
-  overflow: hidden;
-  height: 20em;
-  background-size: cover; /* Ensures the image scales properly */
-  background-position: 50% 30%; /* Moves the image upward (50% horizontal, 30% vertical) */
+/* Services Page Styles */
+.hero-wrap {
+    position: relative;
+    background-attachment: fixed;
+}
+
+.hero-wrap .overlay {
+    background: linear-gradient(45deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%);
+}
+
+.hero-wrap h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-wrap .lead {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Services Section */
+.services-section {
+    padding: 5rem 0;
+    background: var(--light);
+}
+
+.services-section h2 {
+    color: var(--dark);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.services-section h2:after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+/* Service Cards */
+.services {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    margin: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.services:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.services .icon {
+    width: 90px;
+    height: 90px;
+    background: rgba(255, 171, 0, 0.1);
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.services:hover .icon {
+    background: var(--primary);
+}
+
+.services .icon img {
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+    filter: brightness(0) saturate(100%) invert(72%) sepia(95%) saturate(1152%) hue-rotate(359deg) brightness(103%) contrast(106%);
+}
+
+.services:hover .icon img {
+    filter: brightness(0) invert(1);
+}
+
+.services h3 {
+    color: var(--dark);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.services p {
+    color: var(--gray);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+/* FAQ Section */
+.ftco-faqs {
+    padding: 5rem 0;
+    background: #f8f9fa;
+}
+
+.card {
+    border: none;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.card-header {
+    background: #fff;
+    border: none;
+}
+
+.card-header button {
+    width: 100%;
+    text-align: left;
+    color: var(--dark);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 1.25rem;
+    position: relative;
+}
+
+.card-header button:hover {
+    color: var(--primary);
+}
+
+.card-header button:after {
+    content: '\f107';
+    font-family: 'Font Awesome 5 Free';
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+.card-header button[aria-expanded="true"]:after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.card-body {
+    padding: 1.25rem;
+    background: #fff;
+}
+
+.card-body ol {
+    padding-left: 1.25rem;
+    margin-bottom: 0;
+}
+
+.card-body ol li {
+    color: var(--gray);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero-wrap h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-wrap .lead {
+        font-size: 1.1rem;
+    }
+    
+    .services-section h2 {
+        font-size: 2rem;
+    }
+    
+    .services {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-wrap h1 {
+        font-size: 2rem;
+    }
+    
+    .services h3 {
+        font-size: 1.25rem;
+    }
+    
+    .services p {
+        font-size: 0.9rem;
+    }
+    
+    .card-header button {
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
 }

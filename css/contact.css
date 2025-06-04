@@ -5,3 +5,261 @@
   background-size: cover; /* Ensures the image scales properly */
   background-position: 50% 30%; /* Moves the image upward (50% horizontal, 30% vertical) */
 }
+
+/* Contact Page Styles */
+.hero-wrap {
+    position: relative;
+    background-attachment: fixed;
+}
+
+.hero-wrap .overlay {
+    background: linear-gradient(45deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%);
+}
+
+.hero-wrap h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-wrap .lead {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 5rem 0;
+    background: var(--light);
+}
+
+.heading-section h2 {
+    color: var(--dark);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.heading-section h2:after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+/* Contact Form */
+.contactForm {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.contactForm h3 {
+    color: var(--dark);
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    height: auto;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(255, 171, 0, 0.25);
+}
+
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.btn-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+    padding: 12px 30px;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: var(--dark);
+    border-color: var(--dark);
+    transform: translateY(-2px);
+}
+
+/* Contact Info */
+.contact-info {
+    background: var(--dark);
+    border-radius: 15px;
+    padding: 2.5rem;
+    height: 100%;
+}
+
+.contact-info h3 {
+    color: #fff;
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-info ul li {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.contact-info ul li .fa {
+    color: var(--primary);
+    font-size: 1.25rem;
+    margin-right: 1rem;
+    margin-top: 0.25rem;
+}
+
+.contact-info ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.contact-info ul li a:hover {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+/* Map */
+.map-container {
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+}
+
+/* Social Icons */
+.social-links {
+    margin-top: 2rem;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+}
+
+.social-links a i {
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+/* WhatsApp Float */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25d366;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background: #128c7e;
+    transform: scale(1.1);
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero-wrap h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-wrap .lead {
+        font-size: 1.1rem;
+    }
+    
+    .heading-section h2 {
+        font-size: 2rem;
+    }
+    
+    .contact-info {
+        margin-bottom: 2rem;
+    }
+    
+    .map-container iframe {
+        height: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-wrap h1 {
+        font-size: 2rem;
+    }
+    
+    .contactForm,
+    .contact-info {
+        padding: 1.5rem;
+    }
+    
+    .btn-primary {
+        width: 100%;
+    }
+    
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
