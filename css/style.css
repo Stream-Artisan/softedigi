@@ -3008,7 +3008,10 @@ textarea.form-control.is-valid {
   border: 1px solid var(--gray);
   border-radius: 8px;
   padding: 1.5em;
-  transition: all 0.3s ease;
+  tra
+  
+  
+  sition: all 0.3s ease;
 }
 
 .media.block-6.services:hover {
