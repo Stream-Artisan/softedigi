@@ -40,7 +40,7 @@
 	<link rel="stylesheet" href="css/magnific-popup.css">
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/style.css">
-
+	
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="images/favicon.png">
 	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -74,92 +74,87 @@
 	}
 	</script>
 	<style>
-      .custom-card {
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        background-color: transparent; /* Outer card itself is transparent */
-        height: 100%; /* Ensure it respects h-100 from parent */
-      }
+       .custom-card {
+         border-radius: 15px;
+         overflow: hidden;
+         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+         display: flex;
+         flex-direction: column;
+         height: 100%; /* Ensure it respects h-100 from parent */
+       }
 
-      .custom-card .card-image-top {
-        width: 100%;
-        line-height: 0; /* Remove extra space if image is inline-block */
-      }
+       .custom-card .card-image-top {
+         width: 100%;
+         line-height: 0; /* Remove extra space if image is inline-block */
+       }
 
-      .custom-card .card-image-top img { /* For .services-2 original icons / now photos */
-        width: 100%;
-        height: 150px; /* Example fixed height, adjust as needed */
-        object-fit: cover; /* 'cover' for photos */
-        display: block;
-        /* padding: 10px; */ /* Removed for photos */
-        /* background-color: rgba(0,0,0,0.05); */ /* Removed for photos */
-      }
+       .custom-card .card-image-top img { /* For .services-2 original icons / now photos */
+         width: 100%;
+         height: 150px; /* Example fixed height, adjust as needed */
+         object-fit: cover; /* 'cover' for photos */
+         display: block;
+       }
 
-      .custom-card .card-image-top .service-icon { /* For .service-card FontAwesome icons */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 150px; /* Match image height */
-        font-size: 4rem; /* Adjust icon size */
-        background-color: rgba(230, 230, 230, 0.1); /* Light semi-transparent bg for icon area */
-        color: #333; /* Adjust icon color for light bg */
-      }
-      .ftco-section:not(.services-section) .custom-card .card-image-top .service-icon {
-         color: #fff; /* Icon color for dark bg */
-         background-color: rgba(0,0,0,0.1);
-      }
+       .custom-card .card-image-top .service-icon { /* For .service-card FontAwesome icons */
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         width: 100%;
+         height: 150px; /* Match image height */
+         font-size: 4rem; /* Adjust icon size */
+         background-color: #f8f9fa; /* Light bg for icon area */
+         color: #333; /* Adjust icon color for light bg */
+       }
+       .ftco-section:not(.services-section) .custom-card .card-image-top .service-icon {
+          color: #fff; /* Icon color for dark bg */
+          background-color: rgba(0,0,0,0.1);
+       }
 
+       .custom-card .card-content-area {
+         padding: 20px;
+         text-align: center;
+         flex-grow: 1; /* Allow content area to grow */
+         background-color: #fff;
+       }
 
-      .custom-card .card-content-area {
-        padding: 20px;
-        text-align: center;
-        flex-grow: 1; /* Allow content area to grow */
-      }
+       /* For original .services-2 section (section without .services-section class) */
+       .ftco-section:not(.services-section) .custom-card .card-content-area {
+         background-color: #333;
+       }
+       .ftco-section:not(.services-section) .custom-card .card-content-area h3,
+       .ftco-section:not(.services-section) .custom-card .card-content-area p {
+           color: #fff !important;
+       }
 
-      /* Apply specific semi-transparent backgrounds to the content area */
-      /* For original .services-2 section (section without .services-section class) */
-      .ftco-section:not(.services-section) .custom-card .card-content-area {
-        background-color: rgba(50, 50, 50, 0.5) !important;
-      }
-      .ftco-section:not(.services-section) .custom-card .card-content-area h3,
-      .ftco-section:not(.services-section) .custom-card .card-content-area p {
-          color: #fff !important;
-      }
+       /* For .services-section (section with .bg-light) */
+       .ftco-section.services-section .custom-card .card-content-area {
+         background-color: #fff;
+       }
+       .ftco-section.services-section .custom-card .card-content-area h3,
+       .ftco-section.services-section .custom-card .card-content-area p,
+       .ftco-section.services-section .custom-card .card-content-area a {
+           color: #333 !important; /* Ensure text is dark for light background */
+       }
 
-      /* For .services-section (section with .bg-light) */
-      .ftco-section.services-section .custom-card .card-content-area {
-        background-color: rgba(255, 255, 255, 0.5) !important;
-      }
-      .ftco-section.services-section .custom-card .card-content-area h3,
-      .ftco-section.services-section .custom-card .card-content-area p,
-      .ftco-section.services-section .custom-card .card-content-area a {
-          color: #333 !important; /* Ensure text is dark for light background */
-      }
+       .ftco-section.services-section .custom-card .card-image-top img {
+         width: 100%;
+         height: 150px; /* Keep height consistent */
+         object-fit: cover; /* 'cover' for photos */
+         display: block;
+       }
 
-      .ftco-section.services-section .custom-card .card-image-top img {
-        width: 100%;
-        height: 150px; /* Keep height consistent */
-        object-fit: cover; /* 'cover' for photos */
-        display: block;
-        /* No padding or specific background-color needed for cover images */
-      }
+	@keyframes vibrate {
+		0% { transform: translateX(0); }
+		25% { transform: translateX(-2px); }
+		50% { transform: translateX(2px); }
+		75% { transform: translateX(-2px); }
+		100% { transform: translateX(0); }
+	}
 
-@keyframes vibrate {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-2px); }
-    50% { transform: translateX(2px); }
-    75% { transform: translateX(-2px); }
-    100% { transform: translateX(0); }
-}
-
-.phone-number-animate {
-    display: inline-block;
-    animation: vibrate 1s ease-in-out;
-}
+	.phone-number-animate {
+		display: inline-block;
+		animation: vibrate 1s ease-in-out;
+	}
 	</style>
 </head>
 <body>
@@ -573,7 +568,7 @@
 			<div class="row d-flex">
 				<div class="col-md-4 d-flex ftco-animate">
 					<div class="blog-entry justify-content-end">
-						<a href="welcome-blog.html" class="block-20" style="background-image: url('https://plus.unsplash.com/premium_photo-1683309565422-77718a287060?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YmxvZ3xlbnwwfHwwfHx8MA%3D%3D');">
+						<a href="welcome-blog.html" class="block-20" style="background-image: url('https://plus.unsplash.com/premium_photo-1683309565422-77818a287060?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YmxvZ3xlbnwwfHwwfHx8MA%3D%3D');">
 						</a>
 						<div class="text mt-3 float-right d-block">
 							<div class="d-flex align-items-center pt-2 mb-4 topp">
