@@ -45,12 +45,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    // Define recipient email
-    $to = "info@softedigi.com";
-    $subject = "New Contact Form Submission";
-
     // Initialize variables
-    $name = $email = $number = $service = $subject_field = $message = "";
+    $admin_email = "info@softedigi.com";
     $errors = [];
 
     // Sanitize and validate inputs
@@ -58,16 +54,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     $number = filter_input(INPUT_POST, 'number', FILTER_SANITIZE_STRING);
     $message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
+    $service = filter_input(INPUT_POST, 'service', FILTER_SANITIZE_STRING);
+    $subject_field = filter_input(INPUT_POST, 'subject', FILTER_SANITIZE_STRING);
 
-    // Check for service (first form) or subject (second form)
-    if (isset($_POST['service'])) {
-        $service = filter_input(INPUT_POST, 'service', FILTER_SANITIZE_STRING);
-    }
-    if (isset($_POST['subject'])) {
-        $subject_field = filter_input(INPUT_POST, 'subject', FILTER_SANITIZE_STRING);
-    }
-
-    // Enhanced validation
+    // Validation
     if (empty($name) || strlen($name) > 100) {
         $errors[] = "Name is required and must be less than 100 characters.";
     }
@@ -81,46 +71,54 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "Message is required and must be less than 3000 characters.";
     }
 
-    // If no errors, proceed to send email
     if (empty($errors)) {
         try {
-            // Build email content
-            $email_content = "New Contact Form Submission\n\n";
-            $email_content .= "Name: " . htmlspecialchars($name) . "\n";
-            $email_content .= "Email: " . htmlspecialchars($email) . "\n";
-            $email_content .= "Phone Number: " . htmlspecialchars($number) . "\n";
+            // 1. Send notification to admin
+            $admin_subject = "New Contact Form Submission";
+            $admin_message = "New Contact Form Submission\n\n";
+            $admin_message .= "Name: " . htmlspecialchars($name) . "\n";
+            $admin_message .= "Email: " . htmlspecialchars($email) . "\n";
+            $admin_message .= "Phone Number: " . htmlspecialchars($number) . "\n";
             if (!empty($service)) {
-                $email_content .= "Service: " . htmlspecialchars($service) . "\n";
+                $admin_message .= "Service: " . htmlspecialchars($service) . "\n";
             }
             if (!empty($subject_field)) {
-                $email_content .= "Subject: " . htmlspecialchars($subject_field) . "\n";
+                $admin_message .= "Subject: " . htmlspecialchars($subject_field) . "\n";
             }
-            $email_content .= "Message:\n" . htmlspecialchars($message) . "\n";
+            $admin_message .= "\nMessage:\n" . htmlspecialchars($message);
 
-            // Set secure headers
-            $headers = array(
-                'From: no-reply@softedigi.com',
-                'Reply-To: ' . $email,
-                'X-Mailer: PHP/' . phpversion(),
-                'MIME-Version: 1.0',
-                'Content-Type: text/plain; charset=UTF-8',
-                'X-Content-Type-Options: nosniff',
-                'X-Frame-Options: DENY',
-                'X-XSS-Protection: 1; mode=block'
-            );
+            $admin_headers = "From: noreply@" . $_SERVER['HTTP_HOST'] . "\r\n";
+            $admin_headers .= "Reply-To: " . $email . "\r\n";
+            $admin_headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
+            $admin_headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+            $admin_headers .= "X-Content-Type-Options: nosniff\r\n";
 
-            // Attempt to send email
-            if (mail($to, $subject, $email_content, implode("\r\n", $headers))) {
-                // Log successful submission
-                error_log("Form submission successful from: " . $email);
-                
+            // 2. Send confirmation to user
+            $user_subject = "Thank you for contacting Softedigi";
+            $user_message = "Dear " . htmlspecialchars($name) . ",\n\n";
+            $user_message .= "Thank you for contacting Softedigi. We have received your message and will get back to you shortly.\n\n";
+            $user_message .= "Your message details:\n";
+            $user_message .= "Subject: " . htmlspecialchars(!empty($subject_field) ? $subject_field : (!empty($service) ? $service : "General Inquiry")) . "\n";
+            $user_message .= "Message: " . htmlspecialchars($message) . "\n\n";
+            $user_message .= "Best regards,\nSoftedigi Team";
+
+            $user_headers = "From: Softedigi <noreply@" . $_SERVER['HTTP_HOST'] . ">\r\n";
+            $user_headers .= "Reply-To: " . $admin_email . "\r\n";
+            $user_headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
+            $user_headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+            $user_headers .= "X-Content-Type-Options: nosniff\r\n";
+
+            // Send both emails
+            $admin_mail_sent = mail($admin_email, $admin_subject, $admin_message, $admin_headers);
+            $user_mail_sent = mail($email, $user_subject, $user_message, $user_headers);
+
+            if ($admin_mail_sent && $user_mail_sent) {
                 // Generate new CSRF token for next submission
                 $_SESSION['csrf_token'] = generateToken();
-                
                 header("Location: contact.html?status=success");
                 exit();
             } else {
-                throw new Exception("Failed to send email");
+                throw new Exception("Failed to send one or more emails");
             }
         } catch (Exception $e) {
             error_log("Form submission error: " . $e->getMessage());
