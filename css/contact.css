@@ -263,3 +263,71 @@ textarea.form-control {
         right: 20px;
     }
 }
+
+/* International Telephone Input Styles */
+.iti {
+    width: 100%;
+}
+
+.iti__flag {
+    background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/img/flags.png");
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .iti__flag {
+        background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/img/flags@2x.png");
+    }
+}
+
+.iti--allow-dropdown input {
+    padding-left: 52px !important;
+}
+
+.iti--separate-dial-code input {
+    padding-left: 89px !important;
+}
+
+input[name="number"].error {
+    border-color: #dc3545;
+}
+
+.text-danger {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Adjust dropdown position for better visibility */
+.iti__country-list {
+    max-height: 200px;
+    width: 300px;
+}
+
+/* Style the selected flag container */
+.iti__selected-flag {
+    background-color: rgba(0, 0, 0, 0.02);
+    transition: background-color 0.3s;
+}
+
+.iti__selected-flag:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Style the country dropdown */
+.iti__country {
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.iti__country-name {
+    margin-left: 8px;
+    font-size: 14px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .iti__country-list {
+        width: 250px;
+    }
+}

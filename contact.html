@@ -21,10 +21,12 @@
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
 	<link rel="stylesheet" href="css/magnific-popup.css">
 	<link rel="stylesheet" href="css/flaticon.css">
-	<link rel="stylesheet" href="css/style.css">`n`t<link rel="stylesheet" href="css/whatsapp-button.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/whatsapp-button.css">
 	<link rel="stylesheet" href="css/modern-styles.css">
 	<link rel="stylesheet" href="css/contact.css">
 	<link rel="stylesheet" href="css/components.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="images/favicon.png">
@@ -144,22 +146,24 @@
 					</div>
 				</div>
 				<div class="col-md-6 d-flex">
-					<form action="send_email.php" class="bg-light p-5 contactForm rounded shadow w-100">
+					<form action="send_email.php" method="POST" class="bg-light p-5 contactForm rounded shadow w-100">
 						<h3 class="mb-4 text-dark">Send Us a Message</h3>
+						<div id="form-messages"></div>
+						<input type="hidden" name="csrf_token" id="csrf_token">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Your Name" required>
+							<input type="text" class="form-control" name="name" placeholder="Your Name" required maxlength="100">
 						</div>
 						<div class="form-group">
-							<input type="email" class="form-control" placeholder="Your Email" required>
+							<input type="email" class="form-control" name="email" placeholder="Your Email" required maxlength="254">
 						</div>
 						<div class="form-group">
-							<input type="number" class="form-control" placeholder="Your Number" required>
+							<input type="tel" class="form-control" name="number" placeholder="Phone Number" required pattern="[0-9+\-\s()]{6,20}">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Subject">
+							<input type="text" class="form-control" name="subject" placeholder="Subject">
 						</div>
 						<div class="form-group">
-							<textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message" required></textarea>
+							<textarea name="message" cols="30" rows="7" class="form-control" placeholder="Message" required maxlength="3000"></textarea>
 						</div>
 						<div class="form-group">
 							<input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
@@ -271,7 +275,46 @@
 		<script src="js/google-map.js"></script>
 		<script src="js/components.js"></script>
 		<script src="js/main.js"></script>
-		
+		<script src="js/form-handler.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				// Initialize phone inputs
+				var phoneInputs = document.querySelectorAll('input[name="number"]');
+				phoneInputs.forEach(function(input) {
+					var iti = window.intlTelInput(input, {
+						preferredCountries: ['pk'],
+						separateDialCode: true,
+						utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
+					});
+
+					// Store the instance for later use
+					input.iti = iti;
+
+					// Add validation on form submit
+					input.closest('form').addEventListener('submit', function(e) {
+						if (!iti.isValidNumber()) {
+							e.preventDefault();
+							input.classList.add('error');
+							var errorMsg = document.createElement('div');
+							errorMsg.className = 'text-danger mt-1';
+							errorMsg.textContent = 'Please enter a valid phone number';
+							input.parentNode.appendChild(errorMsg);
+						}
+					});
+
+					// Remove error on input change
+					input.addEventListener('input', function() {
+						input.classList.remove('error');
+						var errorMsg = input.parentNode.querySelector('.text-danger');
+						if (errorMsg) {
+							errorMsg.remove();
+						}
+					});
+				});
+			});
+		</script>
 	</body>
 	</html>
 
