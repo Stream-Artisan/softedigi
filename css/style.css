@@ -374,20 +374,41 @@
 }
 
 /* Navbar */
-.navbar {
-  background: var(--dark) !important;
-  border-bottom: 1px solid var(--gray-dark);
-}
+ /* Navbar styles */
+  .navbar {
+    width: 100vw !important;
+    background: var(--dark) !important;
+    border-bottom: 1px solid var(--gray-dark);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 900;
+  }
 
-.navbar .nav-link, .navbar .navbar-brand {
-  color: #fff !important;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-}
+  .navbar .nav-link, .navbar .navbar-brand {
+    color: #fff !important;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
 
-.navbar .nav-link.active, .navbar .nav-link:hover {
-  color: var(--primary) !important;
-}
+  .navbar .nav-link.active, .navbar .nav-link:hover {
+    color: var(--primary) !important;
+  }
+
+  /* Override FTCO or other theme restrictions */
+  .ftco_navbar, .ftco-navbar-light {
+    width: 100vw !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 1rem !important;
+  }
+
+  /* Ensure container inside navbar is full-width */
+  .navbar .container {
+    width: 100%;
+    max-width: none;
+    padding: 0 15px;
+  }
 
 /* Testimonial Section */
 .testimony-wrap {
@@ -3247,7 +3268,8 @@ textarea.form-control.is-valid {
 .navbar {
   background: var(--dark) !important;
   border-bottom: 1px solid var(--gray-dark);
-}
+  justify-content: space-between;
+  }
 
 .navbar .nav-link, .navbar .navbar-brand {
   color: #fff !important;
