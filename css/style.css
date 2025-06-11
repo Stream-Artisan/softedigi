@@ -106,7 +106,7 @@
 }
 
 .container {
-  max-width: 1140px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -1138,11 +1138,11 @@ pre code {
   position: relative; /* Required for the overlay pseudo-element */
 }
   .container {
-    max-width: 1140px;
+    max-width: 1200px;
   }
 }
 
-.container-fluid {
+.container {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -2084,7 +2084,7 @@ pre code {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width:1120px) {
   .col-xl {
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
