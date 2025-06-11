@@ -7805,6 +7805,7 @@ input[type="button"].btn-block {
 }
 
 .nav {
+  /* width: 100%!important; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7817,6 +7818,7 @@ input[type="button"].btn-block {
 
 .nav-link {
   display: block;
+  /* width: 100%; */
   padding: 0.5rem 1rem;
 }
 .nav-link:hover,
