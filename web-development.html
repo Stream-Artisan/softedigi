@@ -1,27 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Welcome</title>
+  <title>Web Development Services</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
   <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
   <link rel="stylesheet" href="css/animate.css">
-  
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/owl.theme.default.min.css">
   <link rel="stylesheet" href="css/magnific-popup.css">
-
-  
   <link rel="stylesheet" href="css/flaticon.css">
-  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/whatsapp-button.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/whatsapp-button.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .glass-effect:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .portfolio-filter {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .portfolio-filter button {
+      background: none;
+      border: none;
+      margin: 0 15px;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      padding: 5px 10px;
+    }
+    .portfolio-filter button.active, .portfolio-filter button:hover {
+      color: #007bff;
+    }
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      margin-bottom: 30px;
+    }
+    .portfolio-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .portfolio-item:hover img {
+      transform: scale(1.1);
+    }
+    .portfolio-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+    .portfolio-overlay h3, .portfolio-overlay p {
+      color: white;
+      text-align: center;
+    }
+    .portfolio-overlay a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .modal-content {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border: none;
+      border-radius: 15px;
+    }
+    .modal-body img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
 <div class="wrap" style="position: relative; z-index: 1000;">
   <div class="container">
     <div class="row justify-content-end py-1">
@@ -60,182 +138,339 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
  <div class="container">
-    <a class="navbar-brand" href="index.html"><img src="images/llogo.png" alt="" width="60px"></a>
+    <a class="navbar-brand" href="index.html"><img src="images/llogo.png" alt="Softedigi Logo" width="60px"></a>
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
      <span class="oi oi-menu"></span> Menu
    </button>
-
    <div class="collapse navbar-collapse" id="ftco-nav">
      <ul class="navbar-nav ml-auto">
        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-       <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-       <!-- <li class="nav-item"><a href="cases.html" class="nav-link">Case Study</a></li> -->
-       <li class="nav-item active"><a href="blog.html" class="nav-link">Blog</a></li>
+       <li class="nav-item active"><a href="services.html" class="nav-link">Services</a></li>
+       <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
        <li class="nav-item"><a href="contact.html" class="nav-link">Contact us</a></li>
        <li class="nav-item cta"><a href="get-started.html" class="nav-link">Get Started</a></li>
-
      </ul>
    </div>
  </div>
 </nav>
-<!-- END nav -->
 
-<div class="hero-wrap js-fullheight" style="background-image: url('images/blog-bg.jpg');">
-		<div class="overlay" style="background:rgba(0,0,0,0.55);"></div>
-		<div class="container">
-			<div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
-				<div class="col-md-8 ftco-animate mt-5 pt-md-5" data-scrollax=" properties: { translateY: '70%' }">
-					<h1 class="mb-4 text-white font-weight-bold" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Welcome to Softedigi</h1>
-					<p class="lead text-light">Where Ideas Turn Into Digital Reality</p>
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="hero-wrap js-fullheight" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e165b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+  <div class="overlay" style="background:rgba(0,0,0,0.6);"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
+      <div class="col-md-8 ftco-animate mt-5 pt-md-5" data-scrollax="properties: { translateY: '70%' }">
+        <h1 class="mb-4 text-white font-weight-bold" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Elite Web Development Services</h1>
+        <p class="lead text-light">Transforming Your Vision into Stunning, High-Performance Websites</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row justify-content-center pb-5">
-				<div class="col-lg-8 heading-section text-center ftco-animate">
-					<h2 class="mb-4" style="color: white;">Welcome to Our Blog</h2>
-					<p class="lead text-light">Discover how Softedigi transforms ideas into digital solutions that drive growth and innovation.</p>
-				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-lg-8">
-					<article class="bg-light p-4 rounded shadow">
-						<h3>Welcome to Softedigi — Where Ideas Turn Into Digital Reality</h3>
-						<p>At Softedigi, we believe every business has the potential to thrive in the digital world. Our team is passionate about turning your ideas into powerful, user-friendly solutions that make a real impact.</p>
-						<p>From web development and design to digital marketing and e-book publishing, we offer a full suite of services to help you succeed. Our approach is simple: listen, innovate, and deliver results that matter.</p>
-						<p>Thank you for joining us on this journey. Stay tuned for more insights, tips, and stories from the Softedigi team!</p>
-					</article>
-				</div>
-			</div>
-		</div>
-	</section>
+<section class="ftco-section bg-light">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-8 text-center heading-section ftco-animate">
+        <h2 class="mb-4">Our Web Development Expertise</h2>
+        <p>With a passion for innovation, we craft bespoke web solutions that elevate your brand and drive measurable results.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 ftco-animate">
+        <div class="block-7 glass-effect p-4">
+          <div class="icon"><span class="flaticon-coding"></span></div>
+          <div class="text-center">
+            <h3 class="heading">Custom Web Development</h3>
+            <p>Tailored websites built with React, Angular, and Node.js for unmatched performance and scalability.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate">
+        <div class="block-7 glass-effect p-4">
+          <div class="icon"><span class="flaticon-web"></span></div>
+          <div class="text-center">
+            <h3 class="heading">E-Commerce Solutions</h3>
+            <p>Secure online stores on Shopify, WooCommerce, or Magento with seamless payment gateways.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate">
+        <div class="block-7 glass-effect p-4">
+          <div class="icon"><span class="flaticon-mobile"></span></div>
+          <div class="text-center">
+            <h3 class="heading">Responsive Design</h3>
+            <p>Mobile-optimized websites ensuring a seamless experience across all devices.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate">
+        <div class="block-7 glass-effect">
+          <div class="icon"><span class="flaticon-database"></span></div>
+          <div class="text-center">
+            <h3 class="heading">Web Applications</h3>
+            <p>Dynamic, secure web-powered apps to streamline operations and boost productivity.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate">
+        <div class="block-7 glass-effect p-4">
+          <div class="icon"><span class="flaticon-maintenance"></span></div>
+          <div class="text-center">
+            <h3 class="heading">Website Maintenance</h3>
+            <p>Continuous updates and optimization for security, speed, and performance.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate">
+        <div class="block-7 glass-effect p-4">
+          <div class="icon"><span class="flaticon-seo"></span></div>
+          <div class="text-center">
+            <h3 class="heading">SEO Optimization</h3>
+            <p>SEO-driven websites to enhance visibility and attract organic traffic.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-	<a href="https://wa.me/923000265371" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
-		<img src="https://cdn-icons-png.flaticon.com/128/2504/2504957.png" alt="">
-		
-	</a>
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-8 text-center heading-section ftco-animate">
+        <h2 class="title">Our Portfolio</h2>
+        <p>Discover our portfolio showcasing cutting-edge web development projects, each tailored to client success.</p>
+      </div>
+    </div>
+    <div class="portfolio-filter">
+      <button class="filter-btn active" data-filter="all" aria-label="Show all projects">All</button>
+      <button class="filter-btn" data-filter="ecommerce" aria-label="Filter e-commerce projects">E-Commerce</button>
+      <button class="filter-btn" data-filter="corporate" aria-label="Filter corporate projects">Corporate</button>
+      <button class="filter-btn" data-filter="webapp" aria-label="Filter web app projects">Web Apps</button>
+    </div>
+    <div class="row">
+      <div class="col-md-4 ftco-animate portfolio-item" data-category="ecommerce">
+        <div class="glass-effect">
+          <img src="https://images.unsplash.com/photo-1711086316387-5f42369d06ea?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGZhc2hpb24lMjBzdG9yZSUyMHdlYnNpdGV8ZW58MHx8MHx8fDA%3D" alt="FashionHub Store Project">
+          <div class="portfolio-overlay">
+            <h3>FashionHub Store</h3>
+            <p>A scalable e-commerce platform with advanced search and payment integration.</p>
+            <a href="#" data-toggle="modal" data-target="#projectModal1">View Details</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate portfolio-item" data-category="corporate">
+        <div class="glass-effect">
+          <img src="https://images.unsplash.com/photo-1667984550873-c48666475fbb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHRlY2glMjB3ZWJzaXRlfGVufDB8fDB8fHww" alt="TechCorp Website Template">
+          <div class="portfolio-overlay">
+            <h3>TechCorp Website</h3>
+            <p>A sleek corporate site with CMS integration and responsive design.</p>
+            <a href="#" data-toggle="modal" data-target="#projectModal2">View Details</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate portfolio-item" data-category="webapp">
+        <div class="glass-effect">
+          <img src="https://images.unsplash.com/photo-1618761714954-0b8cd0026356?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHdlYiUyMGFwcHxlbnwwfHwwfHx8MA%3D%3D" alt="TaskSync Web App Interface">
+          <div class="portfolio-overlay">
+            <h3>TaskSync App</h3>
+            <p>A real-time web app for team collaboration and task management.</p>
+            <a href="#" data-toggle="modal" data-target="#projectModal3">View Details</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate portfolio-item" data-category="ecommerce">
+        <div class="glass-effect">
+          <img src="https://images.unsplash.com/photo-1738640679960-58d445857945?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z2FkZ2V0em9uZSUyMGFwcHxlbnwwfHwwfHx8MA%3D%3D" alt="GadgetZone Electronics Store">
+          <div class="portfolio-overlay">
+            <h3>GadgetZone</h3>
+            <p>An online electronics store with custom checkout features.</p>
+            <a href="#" data-toggle="modal" data-target="#projectModal4">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modals for Portfolio Details -->
+  <div class="modal fade" id="projectModal1" tabindex="-1" role="dialog" aria-labelledby="projectModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content glass-effect">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <img src="https://images.unsplash.com/photo-1560472354-b33c22a337a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="FashionHub Store Website">
+          <h3 id="projectModal1Label">FashionHub Store</h3>
+          <p>A fully customized e-commerce platform built with WooCommerce, featuring advanced product filtering, secure payment gateways, and a responsive design optimized for mobile users.</p>
+          <p><strong>Technologies:</strong> WooCommerce, PHP, JavaScript, MySQL</p>
+          <p><strong>Features:</strong> Product search, wishlist, secure checkout</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="projectModal2" tabindex="-1" role="dialog" aria-labelledby="projectModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content glass-effect">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="TechCorp Corporate Website">
+          <h3 id="projectModal2Label">TechCorp Website</h3>
+          <p>A sleek corporate website with integrated CMS, responsive design, and SEO optimization to enhance online presence.</p>
+          <p><strong>Technologies:</strong> WordPress, HTML5, CSS3, JavaScript</p>
+          <p><strong>Features:</strong> CMS integration, contact forms, SEO tools</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="projectModal3" tabindex="-1" role="dialog" aria-labelledby="projectModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content glass-effect">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e165b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="TaskSync Web Application">
+          <h3 id="projectModal3Label">TaskSync App</h3>
+          <p>A dynamic web application for task management with real-time collaboration features, built using React and Node.js.</p>
+          <p><strong>Technologies:</strong> React, Node.js, MongoDB, WebSocket</p>
+          <p><strong>Features:</strong> Real-time updates, user authentication, task tracking</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="projectModal4" tabindex="-1" role="dialog" aria-labelledby="projectModal4Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content glass-effect">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <img src="https://images.unsplash.com/photo-1504274066651-8d31a536b11a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="GadgetZone E-Commerce Store">
+          <h3 id="projectModal4Label">GadgetZone</h3>
+          <p>An electronics e-commerce platform with custom checkout and product comparison features, built on Shopify.</p>
+          <p><strong>Technologies:</strong> Shopify, Liquid, JavaScript, CSS</p>
+          <p><strong>Features:</strong> Product comparison, custom checkout, reviews</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ftco-section bg-light">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-8 text-center heading-section ftco-animate">
+        <h2 class="mb-4">Client Testimonials</h2>
+        <p>Our clients trust us to deliver exceptional web solutions. Here’s what they say.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 ftco-animate">
+        <div class="block-21 mb-4 d-flex glass-effect p-4">
+          <div class="text">
+            <p class="quote">"Softedigi’s e-commerce solution doubled our online sales with a stunning, user-friendly design."</p>
+            <div class="meta">
+              <div><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=60&q=80" alt="Client John Doe" width="60"></div>
+              <div><span class="text-dark">John Doe, CEO of TechTrend</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 ftco-animate">
+        <div class="block-21 mb-4 d-flex glass-effect p-4">
+          <div class="text">
+            <p class="quote">"Their web app streamlined our workflow, saving us countless hours. Highly professional team!"</p>
+            <div class="meta">
+              <div><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=60&q=80" alt="Client Jane Smith" width="60"></div>
+              <div><span class="text-dark">Jane Smith, Founder of GrowEasy</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center heading-section ftco-animate">
+        <h2 class="mb-4">Ready to Elevate Your Digital Presence?</h2>
+        <p>Partner with us to create a website that captivates and converts. Let’s bring your vision to life!</p>
+        <p><a href="get-started.html" class="btn btn-primary py-3 px-5">Start Your Project</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a href="https://wa.me/923000265371" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
+  <img src="https://cdn-icons-png.flaticon.com/128/2504/2504957.png" alt="WhatsApp Icon">
+</a>
+
 <footer class="ftco-footer ftco-footer-2 ftco-section" style="background:#212121;">
-	<div class="container">
-		<div class="row mb-5">
-			<div class="col-md">
-				<div class="ftco-footer-widget mb-4">
-					<a class="navbar-brand" href="index.html" aria-label="Softedigi Home">
-						<img src="images/llogo.png" alt="Softedigi Logo" width="50" style="margin-top: -10px;">
-					</a>
-					<p class="text-light">Far from the noise of the crowded tech world, we craft innovative IT solutions designed to move your business forward. Fueled by passion, guided by clear strategy, and committed to building lasting impact from day one.</p>
-					<!-- <ul class="ftco-footer-social list-unstyled mt-2">
-						<li class="ftco-animate"><a href="#" aria-label="Twitter"><span class="fa fa-twitter"></span></a></li>
-						<li class="ftco-animate"><a href="#" aria-label="Facebook"><span class="fa fa-facebook"></span></a></li>
-						<li class="ftco-animate"><a href="#" aria-label="Instagram"><span class="fa fa-instagram"></span></a></li>
-					</ul> -->
-				</div>
-			</div>
-			<div class="col-md">
-				<div class="ftco-footer-widget mb-4 ml-md-5">
-					<h2 class="ftco-heading-2 text-white">Explore</h2>
-					<ul class="list-unstyled">
-						<li><a href="about.html" class="py-2 d-block">About</a></li>
-						<li><a href="services.html" class="py-2 d-block">Services</a></li>
-						<li><a href="blog.html" class="py-2 d-block">Blog</a></li>
-						<li><a href="contact.html" class="py-2 d-block">Contact</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md">
-				<div class="ftco-footer-widget mb-4 ml-md-5">
-					<h2 class="ftco-heading-2 text-white">Legal</h2>
-					<ul class="list-unstyled">
-						<li><a href="privacy.html" class="py-2 d-block">Privacy &amp; Policy</a></li>
-						<li><a href="terms.html" class="py-2 d-block">Terms &amp; Conditions</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md">
-				<div class="ftco-footer-widget mb-4">
-					<h2 class="ftco-heading-2 text-white">Have a Question?</h2>
-					<div class="block-23 mb-3">
-						<ul>
-							<li>
-								<span class="icon fa fa-map marker"></span>
-								<span class="text">402, 4th floor, Anum Blessing, 13 Shahrah e Faisal, Karachi</span>
-							</li>
-							<li>
-								<a href="tel:+923093789960"><span class="icon fa fa-phone"></span><span class="text">+92 309 3789960</span></a>
-							</li>
-							<li>
-								<a href="tel:+923000265371"><span class="icon fa fa-phone"></span><span class="text">+92 300 0265371</span></a>
-							</li>
-							<li>
-								<a href="mailto:info@softedigi.com"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">info@softedigi.com</span></a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12 text-center">
-				<p class="text-light mb-0">
-					Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved.
-				</p>
-			</div>
-		</div>
-	</div>
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md">
+        <div class="ftco-footer-widget mb-4">
+          <a class="navbar-brand" href="index.html" aria-label="Softedigi Home">
+            <img src="images/llogo.png" alt="Softedigi Logo" width="50" style="margin-top: -10px;">
+          </a>
+          <p class="text-light">Far from the noise of the crowded tech world, we craft innovative IT solutions designed to move your business forward.</p>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="ftco-footer-widget mb-4 ml-md-5">
+          <h2 class="ftco-heading-2 text-white">Explore</h2>
+          <ul class="list-unstyled">
+            <li><a href="about.html" class="py-2 d-block">About</a></li>
+            <li><a href="services.html" class="py-2 d-block">Services</a></li>
+            <li><a href="blog.html" class="py-2 d-block">Blog</a></li>
+            <li><a href="contact.html" class="py-2 d-block">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="ftco-footer-widget mb-4 ml-md-5">
+          <h2 class="ftco-heading-2 text-white">Legal</h2>
+          <ul class="list-unstyled">
+            <li><a href="privacy.html" class="py-2 d-block">Privacy & Policy</a></li>
+            <li><a href="terms.html" class="py-2 d-block">Terms & Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="ftco-footer-widget mb-4">
+          <h2 class="ftco-heading-2 text-white">Have a Question?</h2>
+          <div class="block-23 mb-3">
+            <ul>
+              <li>
+                <span class="icon fa fa-map marker"></span>
+                <span class="text">402, 4th floor, Anum Blessing, 13 Shahrah e Faisal, Karachi</span>
+              </li>
+              <li>
+                <a href="tel:+923093789960"><span class="icon fa fa-phone"></span><span class="text">+92 309 3789960</span></a>
+              </li>
+              <li>
+                <a href="tel:+923000265371"><span class="icon fa fa-phone"></span><span class="text">+92 300 0265371</span></a>
+              </li>
+              <li>
+                <a href="mailto:info@softedigi.com"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">info@softedigi.com</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <p class="text-light mb-0">
+          Copyright ©<script>document.write(new Date().getFullYear());</script> All rights reserved.
+        </p>
+      </div>
+    </div>
+  </div>
 </footer>
-	
-		
 
-  <script>
-  // Get the form element
-  document.querySelector("form").addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent actual form submission
-
-    // Get input values
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
-
-    // Validate input
-    if (!name || !email || !message) {
-      alert("Please fill in all required fields.");
-      return;
-    }
-
-    // Create new comment element
-    const commentList = document.querySelector(".comment-list");
-    const newComment = document.createElement("li");
-    newComment.classList.add("comment");
-
-    newComment.innerHTML = `
-      <div class="vcard bio">
-        <img src="images/person_1.jpg" alt="User image">
-      </div>
-      <div class="comment-body">
-        <h3>${name}</h3>
-        <div class="meta">${new Date().toLocaleString()}</div>
-        <p>${message}</p>
-        <p><a href="#" class="reply">Reply</a></p>
-      </div>
-    `;
-
-    // Add new comment to the top of the list
-    commentList.prepend(newComment);
-
-    // Reset form
-    this.reset();
-  });
-</script>
-
-
-<!-- loader -->
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
-
 <script src="js/jquery.min.js"></script>
+<!-- jQuery Fallback -->
+<script>window.jQuery || document.write('<script src="https://code.jquery.com/jquery-3.6.0.min.js"><\/script>')</script>
 <script src="js/jquery-migrate-3.0.1.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -246,10 +481,30 @@
 <script src="js/jquery.magnific-popup.min.js"></script>
 <script src="js/jquery.animateNumber.min.js"></script>
 <script src="js/scrollax.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s"></script>
 <script src="js/google-map.js"></script>
 <script src="js/main.js"></script>
-
+<script>
+  (function($) {
+    $(document).ready(function() {
+      // Portfolio Filter with Error Handling
+      try {
+        $('.filter-btn').click(function() {
+          $('.filter-btn').removeClass('active').attr('aria-selected', 'false');
+          $(this).addClass('active').attr('aria-selected', 'true');
+          var filter = $(this).data('filter');
+          if (filter === 'all') {
+            $('.portfolio-item').fadeIn();
+          } else {
+            $('.portfolio-item').hide();
+            $('.portfolio-item[data-category="' + filter + '"]').fadeIn();
+          }
+        });
+      } catch (e) {
+        console.error('Portfolio filter error:', e);
+      }
+    });
+  })(jQuery);
+</script>
 </body>
 </html>
-

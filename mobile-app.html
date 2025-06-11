@@ -1,27 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Welcome</title>
+  <title>Mobile App Development Services</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
   <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
   <link rel="stylesheet" href="css/animate.css">
-  
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/owl.theme.default.min.css">
   <link rel="stylesheet" href="css/magnific-popup.css">
-
-  
   <link rel="stylesheet" href="css/flaticon.css">
-  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/whatsapp-button.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/whatsapp-button.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .glass-effect:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .portfolio-filter {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .portfolio-filter button {
+      background: none;
+      border: none;
+      margin: 0 15px;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      padding: 5px 10px;
+    }
+    .portfolio-filter button.active, .portfolio-filter button:hover {
+      color: #007bff;
+    }
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      margin-bottom: 30px;
+    }
+    .portfolio-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .portfolio-item:hover img {
+      transform: scale(1.1);
+    }
+    .portfolio-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+    .portfolio-overlay h3, .portfolio-overlay p {
+      color: white;
+      text-align: center;
+    }
+    .portfolio-overlay a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .modal-content {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border: none;
+      border-radius: 15px;
+    }
+    .modal-body img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
 <div class="wrap" style="position: relative; z-index: 1000;">
   <div class="container">
     <div class="row justify-content-end py-1">
@@ -59,183 +137,340 @@
 </div>
 
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
- <div class="container">
-    <a class="navbar-brand" href="index.html"><img src="images/llogo.png" alt="" width="60px"></a>
-   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-     <span class="oi oi-menu"></span> Menu
-   </button>
-
-   <div class="collapse navbar-collapse" id="ftco-nav">
-     <ul class="navbar-nav ml-auto">
-       <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-       <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-       <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-       <!-- <li class="nav-item"><a href="cases.html" class="nav-link">Case Study</a></li> -->
-       <li class="nav-item active"><a href="blog.html" class="nav-link">Blog</a></li>
-       <li class="nav-item"><a href="contact.html" class="nav-link">Contact us</a></li>
-       <li class="nav-item cta"><a href="get-started.html" class="nav-link">Get Started</a></li>
-
-     </ul>
-   </div>
- </div>
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><img src="images/llogo.png" alt="Softedigi Logo" width="60px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span> Menu
+    </button>
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item active"><a href="services.html" class="nav-link">Services</a></li>
+        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact us</a></li>
+        <li class="nav-item cta"><a href="get-started.html" class="nav-link">Get Started</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>
-<!-- END nav -->
 
-<div class="hero-wrap js-fullheight" style="background-image: url('images/blog-bg.jpg');">
-		<div class="overlay" style="background:rgba(0,0,0,0.55);"></div>
-		<div class="container">
-			<div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
-				<div class="col-md-8 ftco-animate mt-5 pt-md-5" data-scrollax=" properties: { translateY: '70%' }">
-					<h1 class="mb-4 text-white font-weight-bold" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Welcome to Softedigi</h1>
-					<p class="lead text-light">Where Ideas Turn Into Digital Reality</p>
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="hero-wrap js-fullheight" >
+  <div class="overlay" style="background:rgba(0,0,0,0.6);"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
+      <div class="col-md-8 ftco-animate mt-5 pt-md-5" data-scrollax="properties: { translateY: '70%' }">
+        <h1 class="mb-4 text-white font-weight-bold" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Innovative Mobile App Development</h1>
+        <p class="lead text-light">Building High-Performance Apps for iOS and Android</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row justify-content-center pb-5">
-				<div class="col-lg-8 heading-section text-center ftco-animate">
-					<h2 class="mb-4" style="color: white;">Welcome to Our Blog</h2>
-					<p class="lead text-light">Discover how Softedigi transforms ideas into digital solutions that drive growth and innovation.</p>
-				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-lg-8">
-					<article class="bg-light p-4 rounded shadow">
-						<h3>Welcome to Softedigi — Where Ideas Turn Into Digital Reality</h3>
-						<p>At Softedigi, we believe every business has the potential to thrive in the digital world. Our team is passionate about turning your ideas into powerful, user-friendly solutions that make a real impact.</p>
-						<p>From web development and design to digital marketing and e-book publishing, we offer a full suite of services to help you succeed. Our approach is simple: listen, innovate, and deliver results that matter.</p>
-						<p>Thank you for joining us on this journey. Stay tuned for more insights, tips, and stories from the Softedigi team!</p>
-					</article>
-				</div>
-			</div>
-		</div>
-	</section>
+<section class="ftco-section bg-light">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-8 text-center heading-section ftco-animate">
+        <h2 class="mb-4">Our Mobile App Development Expertise</h2>
+        <p>We create user-friendly, scalable, and secure mobile apps tailored to your business needs.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 ftco-animate">
+        <div class="block-7 glass-effect p-4">
+          <div class="icon"><span class="flaticon-ios"></span></div>
+          <div class="text-center">
+            <h3 class="heading">iOS App Development</h3>
+            <p>Custom iOS apps built with Swift for seamless performance on Apple devices.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate">
+        <div class="block-7 glass-effect p-4">
+          <div class="icon"><span class="flaticon-android"></span></div>
+          <div class="text-center">
+            <h3 class="heading">Android App Development</h3>
+            <p>Robust Android apps developed with Kotlin for wide device compatibility.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate">
+        <div class="block-7 glass-effect p-4">
+          <div class="icon"><span class="flaticon-cross-platform"></span></div>
+          <div class="text-center">
+            <h3 class="heading">Cross-Platform Development</h3>
+            <p>Efficient apps for both platforms using Flutter or React Native.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate">
+        <div class="block-7 glass-effect p-4">
+          <div class="icon"><span class="flaticon-ui"></span></div>
+          <div class="text-center">
+            <h3 class="heading">UI/UX Design</h3>
+            <p>Intuitive and engaging app interfaces for exceptional user experiences.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate">
+        <div class="block-7 glass-effect p-4">
+          <div class="icon"><span class="flaticon-maintenance"></span></div>
+          <div class="text-center">
+            <h3 class="heading">App Maintenance</h3>
+            <p>Ongoing updates and support to keep your app running smoothly.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate">
+        <div class="block-7 glass-effect p-4">
+          <div class="icon"><span class="flaticon-testing"></span></div>
+          <div class="text-center">
+            <h3 class="heading">App Testing</h3>
+            <p>Rigorous testing to ensure functionality, performance, and security.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-	<a href="https://wa.me/923000265371" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
-		<img src="https://cdn-icons-png.flaticon.com/128/2504/2504957.png" alt="">
-		
-	</a>
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-8 text-center heading-section ftco-animate">
+        <h2 class="mb-4">Our Portfolio</h2>
+        <p>Explore our portfolio of innovative mobile apps designed for success.</p>
+      </div>
+    </div>
+    <div class="portfolio-filter">
+      <button class="filter-btn active" data-filter="all" aria-label="Show all projects">All</button>
+      <button class="filter-btn" data-filter="ios" aria-label="Show iOS projects">iOS</button>
+      <button class="filter-btn" data-filter="android" aria-label="Show Android projects">Android</button>
+      <button class="filter-btn" data-filter="crossplatform" aria-label="Show cross-platform projects">Cross-Platform</button>
+    </div>
+    <div class="row">
+      <div class="col-md-4 ftco-animate portfolio-item" data-category="ios">
+        <div class="glass-effect">
+          <img src="https://images.unsplash.com/photo-1730818875087-182c15e1e7a4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGlvcyUyMGFwcHxlbnwwfHwwfHx8MA%3D%3D" alt="FitTrack iOS App">
+          <div class="portfolio-overlay">
+            <h3>FitTrack iOS</h3>
+            <p>A fitness tracking app with real-time workout analytics for iOS users.</p>
+            <a href="#" data-toggle="modal" data-target="#projectModal1">View Details</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate portfolio-item" data-category="android">
+        <div class="glass-effect">
+          <img src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YW5kcm9pZCUyMGFwcHxlbnwwfHwwfHx8MA%3D%3D" alt="ShopEasy Android App">
+          <div class="portfolio-overlay">
+            <h3>ShopEasy Android</h3>
+            <p>An e-commerce app with secure payments for Android devices.</p>
+            <a href="#" data-toggle="modal" data-target="#projectModal2">View Details</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate portfolio-item" data-category="crossplatform">
+        <div class="glass-effect">
+          <img src="https://images.unsplash.com/photo-1580664031752-0f1379ea4de2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y3Jvc3MlMjBwbGF0Zm9ybSUyMGFwcHxlbnwwfHwwfHx8MA%3D%3D" alt="TaskSync Cross-Platform App">
+          <div class="portfolio-overlay">
+            <h3>TaskSync Cross-Platform</h3>
+            <p>A productivity app for task management on both iOS and Android.</p>
+            <a href="#" data-toggle="modal" data-target="#projectModal3">View Details</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate portfolio-item" data-category="ios">
+        <div class="glass-effect">
+          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="LearnNow iOS App">
+          <div class="portfolio-overlay">
+            <h3>LearnNow iOS</h3>
+            <p>An educational app with interactive courses for iOS users.</p>
+            <a href="#" data-toggle="modal" data-target="#projectModal4">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modals for Portfolio Details -->
+  <div class="modal fade" id="projectModal1" tabindex="-1" role="dialog" aria-labelledby="projectModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content glass-effect">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <img src="https://images.unsplash.com/photo-1554260570-9147fd653a1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="FitTrack iOS App">
+          <h3 id="projectModal1Label">FitTrack iOS</h3>
+          <p>A fitness tracking app with real-time analytics, built with Swift for iOS devices.</p>
+          <p><strong>Technologies:</strong> Swift, CoreData, HealthKit</p>
+          <p><strong>Features:</strong> Workout tracking, heart rate monitoring, user profiles</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="projectModal2" tabindex="-1" role="dialog" aria-labelledby="projectModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content glass-effect">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e165b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="ShopEasy Android App">
+          <h3 id="projectModal2Label">ShopEasy Android</h3>
+          <p>An e-commerce app with secure payment integration, developed with Kotlin for Android.</p>
+          <p><strong>Technologies:</strong> Kotlin, Firebase, Stripe</p>
+          <p><strong>Features:</strong> Product catalog, secure checkout, push notifications</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="projectModal3" tabindex="-1" role="dialog" aria-labelledby="projectModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content glass-effect">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="TaskSync Cross-Platform App">
+          <h3 id="projectModal3Label">TaskSync Cross-Platform</h3>
+          <p>A task management app built with Flutter for seamless performance on iOS and Android.</p>
+          <p><strong>Technologies:</strong> Flutter, Dart, Firebase</p>
+          <p><strong>Features:</strong> Real-time collaboration, task scheduling, offline mode</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="projectModal4" tabindex="-1" role="dialog" aria-labelledby="projectModal4Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content glass-effect">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="LearnNow iOS App">
+          <h3 id="projectModal4Label">LearnNow iOS</h3>
+          <p>An educational app with interactive courses, built with Swift for iOS devices.</p>
+          <p><strong>Technologies:</strong> Swift, AVKit, CoreAnimation</p>
+          <p><strong>Features:</strong> Video courses, quizzes, progress tracking</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ftco-section bg-light">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-8 text-center heading-section ftco-animate">
+        <h2 class="mb-4">Client Testimonials</h2>
+        <p>Our clients love our innovative mobile apps. Here’s what they say about us.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 ftco-animate">
+        <div class="block-21 mb-4 d-flex glass-effect p-4">
+          <div class="text">
+            <p class="quote">"Softedigi’s iOS app transformed our customer engagement. Highly intuitive!"</p>
+            <div class="meta">
+              <div><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=60&q=80" alt="Client John Doe" width="60"></div>
+              <div><span class="text-dark">John Doe, CEO of FitTrack</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 ftco-animate">
+        <div class="block-21 mb-4 d-flex glass-effect p-4">
+          <div class="text">
+            <p class="quote">"Their cross-platform app saved us development time and delivered flawless performance."</p>
+            <div class="meta">
+              <div><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=60&q=80" alt="Client Jane Smith" width="60"></div>
+              <div><span class="text-dark">Jane Smith, Founder of TaskSync</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center heading-section ftco-animate">
+        <h2 class="mb-4">Ready to Launch Your Mobile App?</h2>
+        <p>Partner with us to build an app that engages users and drives success.</p>
+        <p><a href="get-started.html" class="btn btn-primary py-3 px-5">Start Your Project</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a href="https://wa.me/923000265371" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
+  <img src="https://cdn-icons-png.flaticon.com/128/2504/2504957.png" alt="WhatsApp Icon">
+</a>
+
 <footer class="ftco-footer ftco-footer-2 ftco-section" style="background:#212121;">
-	<div class="container">
-		<div class="row mb-5">
-			<div class="col-md">
-				<div class="ftco-footer-widget mb-4">
-					<a class="navbar-brand" href="index.html" aria-label="Softedigi Home">
-						<img src="images/llogo.png" alt="Softedigi Logo" width="50" style="margin-top: -10px;">
-					</a>
-					<p class="text-light">Far from the noise of the crowded tech world, we craft innovative IT solutions designed to move your business forward. Fueled by passion, guided by clear strategy, and committed to building lasting impact from day one.</p>
-					<!-- <ul class="ftco-footer-social list-unstyled mt-2">
-						<li class="ftco-animate"><a href="#" aria-label="Twitter"><span class="fa fa-twitter"></span></a></li>
-						<li class="ftco-animate"><a href="#" aria-label="Facebook"><span class="fa fa-facebook"></span></a></li>
-						<li class="ftco-animate"><a href="#" aria-label="Instagram"><span class="fa fa-instagram"></span></a></li>
-					</ul> -->
-				</div>
-			</div>
-			<div class="col-md">
-				<div class="ftco-footer-widget mb-4 ml-md-5">
-					<h2 class="ftco-heading-2 text-white">Explore</h2>
-					<ul class="list-unstyled">
-						<li><a href="about.html" class="py-2 d-block">About</a></li>
-						<li><a href="services.html" class="py-2 d-block">Services</a></li>
-						<li><a href="blog.html" class="py-2 d-block">Blog</a></li>
-						<li><a href="contact.html" class="py-2 d-block">Contact</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md">
-				<div class="ftco-footer-widget mb-4 ml-md-5">
-					<h2 class="ftco-heading-2 text-white">Legal</h2>
-					<ul class="list-unstyled">
-						<li><a href="privacy.html" class="py-2 d-block">Privacy &amp; Policy</a></li>
-						<li><a href="terms.html" class="py-2 d-block">Terms &amp; Conditions</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md">
-				<div class="ftco-footer-widget mb-4">
-					<h2 class="ftco-heading-2 text-white">Have a Question?</h2>
-					<div class="block-23 mb-3">
-						<ul>
-							<li>
-								<span class="icon fa fa-map marker"></span>
-								<span class="text">402, 4th floor, Anum Blessing, 13 Shahrah e Faisal, Karachi</span>
-							</li>
-							<li>
-								<a href="tel:+923093789960"><span class="icon fa fa-phone"></span><span class="text">+92 309 3789960</span></a>
-							</li>
-							<li>
-								<a href="tel:+923000265371"><span class="icon fa fa-phone"></span><span class="text">+92 300 0265371</span></a>
-							</li>
-							<li>
-								<a href="mailto:info@softedigi.com"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">info@softedigi.com</span></a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12 text-center">
-				<p class="text-light mb-0">
-					Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved.
-				</p>
-			</div>
-		</div>
-	</div>
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md">
+        <div class="ftco-footer-widget mb-4">
+          <a class="navbar-brand" href="index.html" aria-label="Softedigi Home">
+            <img src="images/llogo.png" alt="Softedigi Logo" width="50" style="margin-top: -10px;">
+          </a>
+          <p class="text-light">Far from the noise of the crowded tech world, we craft innovative mobile apps to empower your business.</p>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="ftco-footer-widget mb-4 ml-md-5">
+          <h2 class="ftco-heading-2 text-white">Explore</h2>
+          <ul class="list-unstyled">
+            <li><a href="about.html" class="py-2 d-block">About</a></li>
+            <li><a href="services.html" class="py-2 d-block">Services</a></li>
+            <li><a href="blog.html" class="py-2 d-block">Blog</a></li>
+            <li><a href="contact.html" class="py-2 d-block">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="ftco-footer-widget mb-4 ml-md-5">
+          <h2 class="ftco-heading-2 text-white">Legal</h2>
+          <ul class="list-unstyled">
+            <li><a href="privacy.html" class="py-2 d-block">Privacy & Policy</a></li>
+            <li><a href="terms.html" class="py-2 d-block">Terms & Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="ftco-footer-widget mb-4">
+          <h2 class="ftco-heading-2 text-white">Have a Question?</h2>
+          <div class="block-23 mb-3">
+            <ul>
+              <li>
+                <span class="icon fa fa-map marker"></span>
+                <span class="text">402, 4th floor, Anum Blessing, 13 Shahrah e Faisal, Karachi</span>
+              </li>
+              <li>
+                <a href="tel:+923093789960"><span class="icon fa fa-phone"></span><span class="text">+92 309 3789960</span></a>
+              </li>
+              <li>
+                <a href="tel:+923000265371"><span class="icon fa fa-phone"></span><span class="text">+92 300 0265371</span></a>
+              </li>
+              <li>
+                <a href="mailto:info@softedigi.com"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">info@softedigi.com</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <p class="text-light mb-0">
+          Copyright ©<script>document.write(new Date().getFullYear());</script> All rights reserved.
+        </p>
+      </div>
+    </div>
+  </div>
 </footer>
-	
-		
 
-  <script>
-  // Get the form element
-  document.querySelector("form").addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent actual form submission
-
-    // Get input values
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
-
-    // Validate input
-    if (!name || !email || !message) {
-      alert("Please fill in all required fields.");
-      return;
-    }
-
-    // Create new comment element
-    const commentList = document.querySelector(".comment-list");
-    const newComment = document.createElement("li");
-    newComment.classList.add("comment");
-
-    newComment.innerHTML = `
-      <div class="vcard bio">
-        <img src="images/person_1.jpg" alt="User image">
-      </div>
-      <div class="comment-body">
-        <h3>${name}</h3>
-        <div class="meta">${new Date().toLocaleString()}</div>
-        <p>${message}</p>
-        <p><a href="#" class="reply">Reply</a></p>
-      </div>
-    `;
-
-    // Add new comment to the top of the list
-    commentList.prepend(newComment);
-
-    // Reset form
-    this.reset();
-  });
-</script>
-
-
-<!-- loader -->
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
-
 <script src="js/jquery.min.js"></script>
+<!-- jQuery Fallback -->
+<script>window.jQuery || document.write('<script src="https://code.jquery.com/jquery-3.6.0.min.js"><\/script>')</script>
 <script src="js/jquery-migrate-3.0.1.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -246,10 +481,30 @@
 <script src="js/jquery.magnific-popup.min.js"></script>
 <script src="js/jquery.animateNumber.min.js"></script>
 <script src="js/scrollax.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s"></script>
 <script src="js/google-map.js"></script>
 <script src="js/main.js"></script>
-
+<script>
+  (function($) {
+    $(document).ready(function() {
+      // Portfolio Filter with Error Handling
+      try {
+        $('.filter-btn').click(function() {
+          $('.filter-btn').removeClass('active').attr('aria-selected', 'false');
+          $(this).addClass('active').attr('aria-selected', 'true');
+          var filter = $(this).data('filter');
+          if (filter === 'all') {
+            $('.portfolio-item').fadeIn();
+          } else {
+            $('.portfolio-item').hide();
+            $('.portfolio-item[data-category="' + filter + '"]').fadeIn();
+          }
+        });
+      } catch (e) {
+        console.error('Portfolio filter error:', e);
+      }
+    });
+  })(jQuery);
+</script>
 </body>
 </html>
-
